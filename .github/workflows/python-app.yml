@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
   
   schedule:
-    - cron: '38 21 * * *'
+    - cron: '46 21 * * *'
     - cron: '0 10 * * 0' # At 10:00 on Sunday
     - cron: '0 10 * * 1' # At 10:00 on Monday
 
