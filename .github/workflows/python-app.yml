@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: '7 21 * * *'
+    - cron: '10 21 * * *'
     - cron: '0 10 * * 0' # At 10:00 on Sunday
     - cron: '0 10 * * 1' # At 10:00 on Monday
 
