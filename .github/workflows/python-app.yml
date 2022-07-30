@@ -38,6 +38,8 @@ jobs:
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-      run: python ../src/send_mail.py
+      run: |
+          cd src/
+          python send_mail.py
 
         
