@@ -4,15 +4,15 @@
 name: Python application
 
 on:
-  schedule:
-    - cron: '20 21 * * *'
-    - cron: '0 10 * * 0' # At 10:00 on Sunday
-    - cron: '0 10 * * 1' # At 10:00 on Monday
-
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  
+  schedule:
+    - cron: '38 21 * * *'
+    - cron: '0 10 * * 0' # At 10:00 on Sunday
+    - cron: '0 10 * * 1' # At 10:00 on Monday
 
 permissions:
   contents: read
@@ -39,15 +39,3 @@ jobs:
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: python send_email.py
-    
-    - name: commit files
-      run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "cron schedule" --allow-empty)
-          
-    - name: push changes
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-          branch: main 
