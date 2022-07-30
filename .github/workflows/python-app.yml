@@ -39,7 +39,5 @@ jobs:
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       run: |
-          cd src/
-          python send_mail.py
+          python src/send_mail.py
 
-        
