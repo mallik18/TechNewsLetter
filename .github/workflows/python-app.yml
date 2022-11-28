@@ -9,9 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
   
-  schedule:
-    - cron: '0 10 * * 0' # At 10:00 on Sunday
-    - cron: '0 10 * * 1' # At 10:00 on Monday
+#  schedule:
+#    - cron: '0 10 * * 0' # At 10:00 on Sunday
+#    - cron: '0 10 * * 1' # At 10:00 on Monday
 
 permissions:
   contents: read
